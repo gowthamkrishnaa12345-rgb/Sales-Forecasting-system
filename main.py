@@ -2,7 +2,7 @@ import sqlite3
 import tkinter as tk
 from tkinter import messagebox
 
-# Database setup
+
 conn = sqlite3.connect('database.db')
 cursor = conn.cursor()
 
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS Sales (
 
 conn.commit()
 
-# Functions
+
 def add_product():
     pid = entry_pid.get()
     name = entry_name.get()
@@ -59,12 +59,12 @@ def forecast():
     else:
         messagebox.showerror("Error", "No data found")
 
-# UI
+
 root = tk.Tk()
 root.title("Sales Forecasting System")
 root.geometry("400x500")
 
-# Product Section
+
 tk.Label(root, text="Add Product").pack()
 
 entry_pid = tk.Entry(root)
@@ -85,7 +85,7 @@ entry_price.insert(0, "Price")
 
 tk.Button(root, text="Add Product", command=add_product).pack(pady=5)
 
-# Sales Section
+
 tk.Label(root, text="Add Sales").pack()
 
 entry_sid = tk.Entry(root)
@@ -106,7 +106,7 @@ entry_date.insert(0, "YYYY-MM-DD")
 
 tk.Button(root, text="Add Sales", command=add_sales).pack(pady=5)
 
-# Forecast Section
+
 tk.Label(root, text="Forecast").pack()
 
 entry_fpid = tk.Entry(root)
